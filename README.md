@@ -3,4 +3,4 @@
 
   **Free To Air Channels (MALAYSIA)
 
-# <img src="https://raw.githubusercontent.com/suaji/" width="500px" align="center" alt="MyTivi"/>
+# <img src="https://raw.githubusercontent.com/suaji/MYTIVI/master/screenshot2.png" width="500px" align="center" alt="MyTivi"/>
