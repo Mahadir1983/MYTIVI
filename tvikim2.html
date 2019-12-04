@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>TV IKIM</title>
+</head>
+
+<body>
+
+<video id=example-video width=1080 height=720 class="video-js vjs-default-skin" controls>
+  <source
+     src="http://202.80.222.171/000001/2/ch15051810235326945512/index.m3u8?virtualDomain=000001.live_hls.zte.com"
+     type="application/x-mpegURL">
+</video>
+<script src="video.js"></script>
+<script src="videojs.hls.min.js"></script>
+<script>
+var player = videojs('example-video');
+player.play();
+</script>
+
+</body>
+</html>
