@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+$videoid="k3GVzd2cWbveXyrApah";
+$path_log_link='logs/';
+$path_download_file='videos/';
+$link="";
+$page=file_get_contents('http://www.dailymotion.com/embed/video/'.$videoid);
+$link = substr($page, strlen('m3u8","url":"')+strripos($page, 'm3u8","url":"'));
+$link = substr($link, 0, strpos($link, '"}'));
+$link = str_replace("\\", '', $link);
+$path = $path_download_file.$videoid.".m3u8";
+
+if ((!file_exists($path)) && (!empty($link))){
+  file_put_contents($path_log_link.$videoid.'.txt', $link);
+  $cmd='wget -bqc '.$link.' -O "'.$path_download_file.$videoid.'.m3u8"';
+  exec($cmd,$o,$r);
+}
+?>
+
+</body>
+</html>

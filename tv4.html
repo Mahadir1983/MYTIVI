@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Embed Player</title>
+       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+       <div id="page"> </div>
+       <script>
+           var lnk = "https://www.dailymotion.com/services/oembed?url=https://www.dailymotion.com/video/x6zvnex";            $.ajax({
+               url: lnk,
+               type: 'GET',
+               crossDomain: true,
+               dataType: 'jsonp',
+               success: function (out)
+               {                     
+                    $('#page').append('<h1>Title: '+out.title+'</h1>');
+                    $('#page').append('<p>Description: '+out.description+'</p>');
+                    $('#page').append('<h3> Author: '+out.author_name+'<h3>');
+                    $('#page').append('Thumbnail: <img src="'+out.thumbnail_url+'"/><br />');
+                    $('#page').append('Video: '+out.html);
+               },
+               error: function (err)
+               {
+                    console.log(err)
+               }
+           });
+           </script>
+   </body>
+</html>
